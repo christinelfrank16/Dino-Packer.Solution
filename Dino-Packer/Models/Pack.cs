@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DinoPacker.Models
 {
     public class Pack
     {
-        public List<string> Items { get; }
+        public static Pack Instance = new Pack();
+        public List<string> Items { get; set;}
         public Pack()
         {
             Items = new List<string>{};
@@ -24,6 +26,11 @@ namespace DinoPacker.Models
                 }
             }
             return isPackReady;
+        }
+        public void AddItems(List<string> newItems)
+        {
+            Items.AddRange(newItems);
+            Items = Items.Distinct().ToList();
         }
     }
 }
