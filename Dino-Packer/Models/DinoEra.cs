@@ -14,6 +14,10 @@ namespace DinoPacker.Models
 
             List<string> jurassicItems = new List<string>{"shovel", "water", "food", "dino deterrant", "vehicle", "hat", "bug spray"};
             EraItems.Add("Jurassic", jurassicItems);
+            List<string> triassicItems = new List<string> {"flashlight", "binoculars", "rope", "weapon", "charger","food","water"};
+            EraItems.Add("Triassic", triassicItems);
+            List<string> cretaceousItems = new List<string> {"food","water","laptop","camera","weapon","oxygen mask", "experiment container","tranquilizer"};
+            EraItems.Add("Cretaceous", cretaceousItems);
         }
 
 

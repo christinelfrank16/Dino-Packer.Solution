@@ -32,15 +32,15 @@
         <p>Check if you can go to this era</p>
         <div class="dropdown">
             <form action="/pack/checker" method="post">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dinosaur Eras
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-        <button type="submit"><span name="jurassic">Jurassic</span></button>
-        <li><span name ="Cretaceous">Cretaceous</span></li>
-        <li><span name= "Triassic">Triassic</span></li>
-    </ul>
-    </form>
-    </div>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dinosaur Eras
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <button type="submit"><input type="text" name="eraName" value="Jurassic" readonly></button><br>
+                    <button type="submit"><input type="text" name="eraName" value="Cretaceous" readonly></button><br>
+                    <button type="submit"><input type="text" name="eraName" value="Triassic" readonly></button>
+                </ul>
+            </form>
+        </div>
         }
         
     </ul>

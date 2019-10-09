@@ -1,22 +1,42 @@
 @using DinoPacker.Models;
+<head>
+    <meta charset="utf-8">
+    <title>Check Your Pack</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    </head>
 <body>
-   <li> Pack.Instance </li>
    @foreach(var pair in Model)
    {
-       @foreach(string item in Pack.Instance.Items)
-       {
-        <li> @item</li>
-
-       }
+       <div class="container">
+           <div class="row">
+               <div class="col-md-4">
+                    @foreach(string item in Pack.Instance.Items)
+                    {
+                        <li> @item</li>
+                        
+                    }
+                </div>
+                <div class="col-md-4">
+                    @foreach(string item in pair.Value.EraItems[pair.Key])
+                    {
+                        <li> @item</li>
+                        
+                    }
+                </div>
+            </div>
+       </div>
    
     @if(Pack.Instance.CheckPack(@pair.Value, @pair.Key))
     {
-        <h1> Yeah you\'re ready </h1>
-
+        <h1> Yeah you're ready </h1>
+        <a href = "/era/@pair.Key"> Take your journey </a>
     }
     else
     {
             <h1> Yeah you\'re NOT ready </h1>
+            <a href = "/pack/new"> Add Needed Items To Be Ready </a>
     }
    }
 </body>

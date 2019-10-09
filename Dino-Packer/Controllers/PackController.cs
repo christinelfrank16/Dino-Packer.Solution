@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DinoPacker.Models;
 using System.Collections.Generic;
+using System;
 
 namespace DinoPacker.Controllers
 {
@@ -27,12 +28,11 @@ namespace DinoPacker.Controllers
             pack.AddItems(new List<string>{item1,item2,item3,item4,item5});
             return RedirectToAction("Index");
         }
-        [HttpGet("/pack/checker")]
+        [HttpPost("/pack/checker")]
         public ActionResult PackCheck(string eraName)
         {
             DinoEra eras = new DinoEra();
-            // Pack pack = Pack.Instance;
-            // Dictionary<Pack,DinoEra> groupModel = new Dictionary<Pack,DinoEra>{};
+            Console.WriteLine(eraName);
             Dictionary<string,DinoEra> groupModel = new Dictionary<string, DinoEra>{};
             groupModel.Add(eraName, eras);
             return View(groupModel);
