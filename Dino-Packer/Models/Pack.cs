@@ -31,6 +31,10 @@ namespace DinoPacker.Models
         {
             Items.AddRange(newItems);
             Items = Items.Distinct().ToList();
+            if(Items.Contains(null))
+            {
+                Items.Remove(null);
+            }
         }
     }
 }

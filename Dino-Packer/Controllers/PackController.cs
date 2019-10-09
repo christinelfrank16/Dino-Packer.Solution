@@ -10,7 +10,9 @@ namespace DinoPacker.Controllers
         [HttpGet("/pack")]
         public ActionResult Index()
         {
-            return View();
+            Pack pack = Pack.Instance;
+            return View(pack);
+          
         }
         [HttpGet("/pack/new")]
         public ActionResult New()
@@ -21,15 +23,9 @@ namespace DinoPacker.Controllers
         [HttpPost("/pack")]
         public ActionResult Create(string item1, string item2, string item3, string item4, string item5)
         {
-            Pack pack = new Pack();
+            Pack pack = Pack.Instance;
             pack.AddItems(new List<string>{item1,item2,item3,item4,item5});
-            return RedirectToAction("Show");
-        }
-
-        [HttpGet("/pack/myPack")]
-        public ActionResult Show()
-        {
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
