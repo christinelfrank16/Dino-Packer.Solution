@@ -1,0 +1,22 @@
+@using DinoPacker.Models;
+<body>
+   <li> Pack.Instance </li>
+   @foreach(var pair in Model)
+   {
+       @foreach(string item in Pack.Instance.Items)
+       {
+        <li> @item</li>
+
+       }
+   
+    @if(Pack.Instance.CheckPack(@pair.Value, @pair.Key))
+    {
+        <h1> Yeah you\'re ready </h1>
+
+    }
+    else
+    {
+            <h1> Yeah you\'re NOT ready </h1>
+    }
+   }
+</body>

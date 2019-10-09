@@ -11,7 +11,12 @@ namespace DinoPacker.Models
         {
             EraItems = new Dictionary<string,List<string>> {};
             DinosaurNames = new Dictionary<string,List<string>>{};
+
+            List<string> jurassicItems = new List<string>{"shovel", "water", "food", "dino deterrant", "vehicle", "hat", "bug spray"};
+            EraItems.Add("Jurassic", jurassicItems);
         }
+
+
 
         
     }

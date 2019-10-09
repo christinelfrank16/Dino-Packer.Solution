@@ -25,19 +25,21 @@
             @foreach(string item in Model.Items)
         {
             <li> @item </li>
-            Console.WriteLine(item);
+      
         }
         
         <p>Add more items to your pack <a href= "/pack/new">here</a></p>
         <p>Check if you can go to this era</p>
         <div class="dropdown">
+            <form action="/pack/checker" method="post">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dinosaur Eras
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-        <li><a href="/era/checker" name= "Jurassic">Jurassic</a></li>
-        <li><a href="/era/checker" name ="Cretaceous">Cretaceous</a></li>
-        <li><a href="/era/checker" name = "Triassic">Triassic</a></li>
+        <button type="submit"><span name="jurassic">Jurassic</span></button>
+        <li><span name ="Cretaceous">Cretaceous</span></li>
+        <li><span name= "Triassic">Triassic</span></li>
     </ul>
+    </form>
     </div>
         }
         
